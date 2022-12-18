@@ -1,5 +1,5 @@
-CXXFLAGS= 
-NVCCFLAGS= 
+CXXFLAGS=-g
+NVCCFLAGS=-g -G
 
 LDFLAGS =
 
@@ -20,10 +20,10 @@ all:$(TARGET)
 $(TARGET): $(OBJS)
 	nvcc $(LDFLAGS) $(OBJS) -o $@
 
-%.o: %.cu
+%.o: %.cpp
 	nvcc -c $(CXXFLAGS) $< -o $@
 
-%.o: %.cpp
+%.o: %.cu
 	nvcc -c $(NVCCFLAGS) $< -o $@ 
 
 

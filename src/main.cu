@@ -27,8 +27,8 @@ __global__ void vecAdd(float *a, float *b, float *c)
 
 int main()
 {
-  const int n_blocks = 4;
-  const int n_threads = 16;
+  const int n_blocks = 128;
+  const int n_threads = 512;
   const int n = n_blocks * n_threads;
 
   vector<float> h_a(n);
